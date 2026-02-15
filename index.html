@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Java Quiz App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- CSS -->
+<link rel="stylesheet" href="index.css">
+
+<!-- Remix Icon CDN for moon/sun -->
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body class="light">
+
+<div class="quiz">
+    <!-- Theme Toggle -->
+    <button class="theme-btn" id="themeToggle">
+        <i class="ri-moon-fill"></i>
+    </button>
+
+    <!-- Question -->
+    <h2 id="question">Loading...</h2>
+
+    <!-- Options -->
+    <div class="options" id="optionsBox">
+        <button id="op0" onclick="checkAnswer(0)">Option 1</button>
+        <button id="op1" onclick="checkAnswer(1)">Option 2</button>
+        <button id="op2" onclick="checkAnswer(2)">Option 3</button>
+        <button id="op3" onclick="checkAnswer(3)">Option 4</button>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button id="back" onclick="prevQuestion()">Back</button>
+        <button id="next" onclick="nextQuestion()">Next</button>
+    </div>
+
+    <!-- Score -->
+    <h3 id="scoreBox"></h3>
+
+    <!-- Restart Button -->
+    <button id="restartBtn" onclick="restartQuiz()" style="display:none;">
+        Restart Quiz
+    </button>
+</div>
+
+<!-- JS -->
+<script src="index.js"></script>
+</body>
+</html>

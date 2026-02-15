@@ -1,0 +1,124 @@
+/* ===== General Styles ===== */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    transition: background 0.5s, color 0.5s;
+}
+
+/* ===== Quiz Card ===== */
+.quiz {
+    width: 90%;
+    max-width: 420px;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: background 0.5s, color 0.5s, box-shadow 0.3s;
+    animation: fadeIn 0.5s ease;
+}
+
+/* ===== Fade In Animation ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Theme Button ===== */
+.theme-btn{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 26px;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.3s, color 0.3s;
+}
+.theme-btn:hover { transform: rotate(20deg) scale(1.15); }
+
+/* ===== Options ===== */
+.options {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.options button{
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background 0.3s, color 0.3s, transform 0.2s, border-color 0.3s;
+}
+.options button:hover { transform: scale(1.03); }
+.options button:active { transform: scale(0.96); }
+
+/* ===== Navigation Buttons ===== */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.nav-buttons button{
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+/* ===== Score Box ===== */
+#scoreBox { margin-top: 15px; }
+
+/* ===== Light Mode ===== */
+body.light {
+    background: #ffffff;
+    color: #111827;
+}
+body.light .quiz { background: #f3f4f6; color: #111827; }
+body.light .options button { background: #e5e7eb; color: #111827; border: 1px solid #d1d5db; }
+body.light .options button:hover { background: #d1d5db; }
+body.light .correct { background: #22c55e !important; color: #ffffff !important; }
+body.light .wrong { background: #ef4444 !important; color: #ffffff !important; }
+body.light .nav-buttons button { background: #60a5fa; color: #111827; border: 1px solid #9ca3af; }
+body.light .nav-buttons button:hover { background: #3b82f6; color: #ffffff; transform: scale(1.05); }
+body.light #restartBtn { background: #f87171; color: #ffffff; border: 1px solid #9ca3af; }
+body.light #restartBtn:hover { background: #ef4444; transform: scale(1.05); }
+body.light .theme-btn { color: #111827; }
+
+/* ===== Dark Mode ===== */
+body.dark {
+    background: #0f172a;
+    color: #f1f5f9;
+}
+body.dark .quiz { background: #1e293b; color: #f1f5f9; box-shadow: 0 8px 25px rgba(0,0,0,0.5); }
+body.dark .options button { background: #334155; color: #ffffff; border: 1px solid #475569; }
+body.dark .options button:hover { background: #475569; }
+body.dark .correct { background: #22c55e !important; color: #000000 !important; }
+body.dark .wrong { background: #ef4444 !important; color: #ffffff !important; }
+body.dark .nav-buttons button { background: #22c55e; color: #ffffff; border: 1px solid #16a34a; }
+body.dark .nav-buttons button:hover { background: #16a34a; transform: scale(1.05); }
+body.dark #restartBtn { background: #f59e0b; color: #000000; border: 1px solid #d97706; }
+body.dark #restartBtn:hover { background: #d97706; transform: scale(1.05); }
+body.dark .theme-btn { color: #facc15; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px){
+    .quiz { max-width: 350px; padding: 25px; }
+    button { font-size: 14px; padding: 8px 16px; }
+    .theme-btn { font-size: 24px; top: 10px; right: 10px; }
+}
+
+@media (max-width: 480px){
+    .quiz { max-width: 100%; padding: 20px; }
+    button { font-size: 13px; padding: 8px 12px; }
+    .theme-btn { font-size: 22px; top: 8px; right: 8px; }
+}
